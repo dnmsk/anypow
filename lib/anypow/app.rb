@@ -13,7 +13,7 @@ class Anypow::App < Rack::Proxy
     trap('INT')  { kill_server }
     trap('QUIT') { kill_server }
     trap('HUP')  { kill_server }
-    trap('KILL') { kill_server }
+    #trap('KILL') { kill_server }
     at_exit { kill_server }
 
     super(opts)
