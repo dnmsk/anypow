@@ -5,7 +5,7 @@ class Anypow::App < Rack::Proxy
   def initialize(server_cmd, opts = {})
     puts "Start anypow server port #{port}, cmd = '#{server_cmd}'"
     @server_pid = spawn_server(server_env, server_cmd)
-    Net::EmptyPort.wait(port, 3)
+    Net::EmptyPort.wait(port, 6)
 
     opts[:backend] = server_url
 
